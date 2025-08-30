@@ -61,7 +61,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				waveform: 'hsl(var(--waveform))',
+				'waveform-active': 'hsl(var(--waveform-active))',
+				'form-background': 'hsl(var(--form-background))',
+				'form-border': 'hsl(var(--form-border))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
