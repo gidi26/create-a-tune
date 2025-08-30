@@ -8,14 +8,14 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
     --primary: 263 70% 50%;
     --primary-foreground: 0 0% 98%;
@@ -23,8 +23,8 @@ All colors MUST be HSL.
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 240 4.8% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 45%;
 
     --accent: 315 100% 70%;
     --accent-foreground: 0 0% 98%;
@@ -39,14 +39,14 @@ All colors MUST be HSL.
     --waveform-active: 195 100% 70%;
     
     /* Form enhancements */
-    --form-background: 240 10% 6%;
-    --form-border: 240 4.8% 15.9%;
+    --form-background: 0 0% 98%;
+    --form-border: 240 4.8% 90%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 4.8% 15.9%;
-    --input: 240 10% 6%;
+    --border: 240 5.9% 90%;
+    --input: 0 0% 98%;
     --ring: 263 70% 50%;
 
     --radius: 0.75rem;
@@ -89,6 +89,10 @@ All colors MUST be HSL.
 
     --accent: 315 100% 70%;
     --accent-foreground: 0 0% 98%;
+
+    /* Form enhancements for dark mode */
+    --form-background: 240 10% 6%;
+    --form-border: 240 4.8% 15.9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;

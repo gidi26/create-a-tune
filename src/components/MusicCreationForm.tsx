@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AudioUpload } from "./AudioUpload";
 import { AudioRecorder } from "./AudioRecorder";
 import { GenreSelector } from "./GenreSelector";
+import { ThemeToggle } from "./ThemeToggle";
 import { Separator } from "@/components/ui/separator";
 import { Music, Wand2, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -119,6 +120,8 @@ export const MusicCreationForm: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ThemeToggle />
+      
       {/* Hero Section */}
       <div className="relative py-20 px-4">
         <div className="absolute inset-0 gradient-hero opacity-10"></div>
