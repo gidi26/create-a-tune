@@ -9,18 +9,17 @@ interface GenreSelectorProps {
 }
 
 const musicGenres = {
-  "pop": ["Pop Mainstream", "Electropop", "Indie Pop", "K-Pop", "Synthpop"],
-  "rock": ["Classic Rock", "Alternative Rock", "Punk Rock", "Hard Rock", "Progressive Rock"],
-  "hip-hop": ["Rap", "Trap", "Old School", "Boom Bap", "Cloud Rap"],
-  "electronic": ["House", "Techno", "Dubstep", "Ambient", "Drum & Bass"],
-  "jazz": ["Smooth Jazz", "Bebop", "Fusion", "Contemporary Jazz", "Latin Jazz"],
-  "reggae": ["Roots Reggae", "Dancehall", "Dub", "Reggaeton", "Ska"],
-  "country": ["Country Pop", "Bluegrass", "Outlaw Country", "Country Rock", "Folk Country"],
-  "r&b": ["Contemporary R&B", "Neo Soul", "Funk", "Motown", "Gospel"],
-  "latin": ["Salsa", "Bachata", "Merengue", "Reggaeton", "Bossa Nova"],
-  "folk": ["Folk Rock", "Indie Folk", "Traditional Folk", "Celtic", "Americana"],
-  "blues": ["Chicago Blues", "Delta Blues", "Electric Blues", "Blues Rock", "Soul Blues"],
-  "classical": ["Baroque", "Romantic", "Contemporary Classical", "Minimalism", "Orchestral"]
+  "sertanejo": ["Raiz", "Universitário", "Romântico", "Feminejo", "Pisadinha", "Gospel"],
+  "pop": ["Mainstream", "Electropop", "Pop Rock", "Indie Pop", "Teen Pop", "Synth Pop"],
+  "rock": ["Clássico", "Alternativo", "Hard Rock", "Indie Rock", "Progressivo", "Punk"],
+  "r&b": ["Contemporâneo", "Neo Soul", "Trap Soul", "Soul Clássico", "Quiet Storm", "Alternative"],
+  "samba-pagode": ["Pagode", "Samba Enredo", "Samba Rock", "Bossa Nova", "Samba Jazz", "Samba Reggae"],
+  "gospel": ["Contemporâneo", "Tradicional", "Urban", "Southern", "Praise & Worship", "Black Gospel"],
+  "funk": ["Brasileiro", "Melody", "Consciente", "Proibidão", "Gospel", "Pop"],
+  "rap": ["Nacional", "Trap Rap", "Gospel", "Boom Bap", "Gangsta", "Melódico"],
+  "trap": ["Brasileiro", "Melódico", "Drill", "Gospel", "Funk", "Jazz"],
+  "country": ["Americano", "Rock", "Bluegrass", "Pop", "Outlaw", "Folk"],
+  "forro": ["Pé-de-Serra", "Universitário", "Eletrônico", "Xote", "Baião", "Estilizado"]
 } as const;
 
 export const GenreSelector: React.FC<GenreSelectorProps> = ({
@@ -47,11 +46,26 @@ export const GenreSelector: React.FC<GenreSelectorProps> = ({
             <SelectValue placeholder="Selecione um gênero" />
           </SelectTrigger>
           <SelectContent className="bg-popover border-form-border">
-            {Object.keys(musicGenres).map((genre) => (
-              <SelectItem key={genre} value={genre} className="hover:bg-muted">
-                {genre.charAt(0).toUpperCase() + genre.slice(1)}
-              </SelectItem>
-            ))}
+            {Object.keys(musicGenres).map((genre) => {
+              const displayNames: Record<string, string> = {
+                "sertanejo": "Sertanejo",
+                "pop": "Pop",
+                "rock": "Rock",
+                "r&b": "R&B", 
+                "samba-pagode": "Samba/Pagode",
+                "gospel": "Gospel",
+                "funk": "Funk",
+                "rap": "Rap",
+                "trap": "Trap",
+                "country": "Country",
+                "forro": "Forró"
+              };
+              return (
+                <SelectItem key={genre} value={genre} className="hover:bg-muted">
+                  {displayNames[genre] || genre.charAt(0).toUpperCase() + genre.slice(1)}
+                </SelectItem>
+              );
+            })}
           </SelectContent>
         </Select>
       </div>
